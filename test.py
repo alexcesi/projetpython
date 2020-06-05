@@ -9,7 +9,7 @@ app = Flask(__name__)
 @app.route("/", methods=['POST', 'GET'])
 def home():
 
-  random_item = random.randint(1,20)
+  random_item = random.randint(1,30)
   
   prixuser = 0
   historique = []
@@ -26,7 +26,7 @@ def home():
   params = {
             "ApiKey": "818e864c-7f59-41db-8546-6498f3d90ef0",
             "SearchRequest": {
-              "Keyword": "ecran",
+              "Keyword": "kitchen",
               "Pagination": {
                 "ItemsPerPage": random_item,
                 "PageNumber": 1
