@@ -11,12 +11,12 @@ def home():
 
   random_item = random.randint(1,20)
   
-  price = -1
+  prixuser = -1
   historique = []
   firstry = -1 
   if request.method == "POST": 
     random_item = int(request.form["random_item"])
-    price = int(request.form["prixinput"])
+    prixuser = int(request.form["prixinput"])
     historique = json.loads(request.form["historique"])
     historique.append(price)
     firstry = float(request.form["firstry"])
@@ -53,7 +53,7 @@ def home():
   if request.method == "POST": 
     temps = datetime.datetime.now() - datetime.datetime.fromtimestamp(firstry)
 
-  return render_template("projet.html", NAME=name, PRIX=prix, IMAGE=image, PRICE=price, RANDOM_ITEM=random_item, HISTORIQUE=historique, FIRSTRY=firstry, TEMPS=temps)
+  return render_template("projet.html", NAME=name, PRIXOBJET=prixobjet, IMAGE=image, PRIXUSER=prixuser, RANDOM_ITEM=random_item, HISTORIQUE=historique, FIRSTRY=firstry, TEMPS=temps)
 
 if __name__ == "__main__":
     app.run()
