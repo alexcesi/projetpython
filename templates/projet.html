@@ -24,7 +24,7 @@
     </form>
 {%else%}
         <form action="/" method="post">
-            <p class="text-center">Trouvez le prix correct</p>
+            <p class="text-center">Trouvez le prix correct en un minimum de temps</p>
             <input type="hidden" name="random_item" value="{{RANDOM_ITEM}}"/>
             <input class="center-block" type="number" name="prixinput" id="prixinput"/>
             <input type="hidden" name="historique" value="{{HISTORIQUE}}"/>
@@ -35,14 +35,14 @@
     {%if PRIXUSER != 0 %}
 
         {%if PRIXUSER > PRIXOBJET%}
-            <p class="text-center">Le prix est plus petit</p>
+            <p class="text-center">Le bon prix est plus petit</p>
         {%else%}
-            <p class="text-center">Le prix est plus grand</p>
+            <p class="text-center">Le bon prix est plus grand</p>
     
         {%endif%}
     {%endif%}
 {%endif%}
-
+<br><br>
 {%if PRIXUSER != 0 %}
 <h4 class="text-center">tentatives précédentes:</h4>
 <ul>
@@ -50,7 +50,8 @@
         <li class="text-center">{{currentvalue}}</li>
     {%endfor%}
 </ul>
-{%endif%}           
+{%endif%}
+   
 
 </body>
 </html>
