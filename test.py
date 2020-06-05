@@ -18,7 +18,7 @@ def home():
     random_item = int(request.form["random_item"])
     prixuser = int(request.form["prixinput"])
     historique = json.loads(request.form["historique"])
-    historique.append(price)
+    historique.append(prixuser)
     firstry = float(request.form["firstry"])
     if firstry == -1 :
        firstry = time.time()
@@ -46,7 +46,7 @@ def home():
  
   r = requests.post(url, data=json.dumps(params))
   name =(r.json()['Products'][0]['Name'])
-  prix = int(float(r.json()['Products'][0]['BestOffer']['SalePrice']))
+  prixobjet = int(float(r.json()['Products'][0]['BestOffer']['SalePrice']))
   image =(r.json()['Products'][0]['MainImageUrl'])
 
   temps = None

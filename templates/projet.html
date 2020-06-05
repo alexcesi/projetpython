@@ -7,13 +7,16 @@
 	<title>ProjetPython</title>
 </head>
 <body>
-        <h1 class="text-center">Bienvenue au jeu du JustePrix</h1>
-        <p>L'objet choisi aléatoirement est : {{NAME}} <img src="{{IMAGE}}"> </p>
+    
+        <h1 class="text-center">Bienvenue au jeu du Juste Prix</h1>
+        <p class="text-center">L'objet choisi aléatoirement est :<br><br>
+            {{NAME}} <br><br>
+            <img src="{{IMAGE}}" class="rounded mx-auto d-block"> </p>
            
 
 {%if PRIXUSER == PRIXOBJET %}
     <p>Bravo! Vous avez gagné <br>
-    {{TEMPS.seconds}}
+    <p>Il vous a fallu {{TEMPS.seconds}} secondes</p>
     </p>
 
     <form action="/" method="get">
@@ -21,30 +24,30 @@
     </form>
 {%else%}
         <form action="/" method="post">
-            <p>Trouvez le prix correct</p>
+            <p class="text-center">Trouvez le prix correct</p>
             <input type="hidden" name="random_item" value="{{RANDOM_ITEM}}"/>
-            <input type="number" name="prixinput" id="prixinput"/>
+            <input class="center-block" type="number" name="prixinput" id="prixinput"/>
             <input type="hidden" name="historique" value="{{HISTORIQUE}}"/>
             <input type="hidden" name="firstry" value="{{FIRSTRY}}"/>
-            <input type="submit" id="envoyer"/>
+            <input class="center-block" type="submit" id="Valider"/>
             
         </form> 
     {%if PRIXUSER != -1 %}
 
         {%if PRIXUSER > PRIXOBJET%}
-            <p>Le prix est trop grand</p>
+            <p class="text-center">Le prix est plus petit</p>
         {%else%}
-            <p>Le prix est trop petit</p>
+            <p class="text-center">Le prix est plus grand</p>
     
         {%endif%}
     {%endif%}
 {%endif%}
 
 {%if PRIXUSER != -1 %}
-<h2>tentatives précédentes:</h2>
+<h4 class="text-center">tentatives précédentes:</h4>
 <ul>
     {%for currentvalue in HISTORIQUE %}
-        <li>{{currentvalue}}</li>
+        <li class="text-center">{{currentvalue}}</li>
     {%endfor%}
 </ul>
 {%endif%}           
