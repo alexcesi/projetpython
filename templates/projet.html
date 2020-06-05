@@ -32,7 +32,7 @@
             <input class="center-block" type="submit" id="Valider"/>
             
         </form> 
-    {%if PRIXUSER != -1 %}
+    {%if PRIXUSER != 0 %}
 
         {%if PRIXUSER > PRIXOBJET%}
             <p class="text-center">Le prix est plus petit</p>
@@ -43,7 +43,7 @@
     {%endif%}
 {%endif%}
 
-{%if PRIXUSER != -1 %}
+{%if PRIXUSER != 0 %}
 <h4 class="text-center">tentatives précédentes:</h4>
 <ul>
     {%for currentvalue in HISTORIQUE %}

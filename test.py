@@ -11,16 +11,16 @@ def home():
 
   random_item = random.randint(1,20)
   
-  prixuser = -1
+  prixuser = 0
   historique = []
-  firstry = -1 
+  firstry = 0
   if request.method == "POST": 
     random_item = int(request.form["random_item"])
     prixuser = int(request.form["prixinput"])
     historique = json.loads(request.form["historique"])
     historique.append(prixuser)
     firstry = float(request.form["firstry"])
-    if firstry == -1 :
+    if firstry == 0 :
        firstry = time.time()
 
   params = {
