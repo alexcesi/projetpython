@@ -34,9 +34,9 @@ def home():
               "Filters": {
                 "Price": {
                   "Min": 0,
-                  "Max": 0
+                  "Max": 1000
                 },
-                "Navigation": "",
+                "Navigation": "all",
                 "IncludeMarketPlace": "false"
               }
             }
