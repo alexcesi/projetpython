@@ -15,12 +15,12 @@
            
 
 {%if PRIXUSER == PRIXOBJET %}
-    <p>Bravo! Vous avez gagné <br>
-    <p>Il vous a fallu {{TEMPS.seconds}} secondes</p>
+    <p class="text-center">Bravo! Vous avez gagné <br>
+    <p class="text-center">Il vous a fallu {{TEMPS.seconds}} secondes</p>
     </p>
 
     <form action="/" method="get">
-        <input type="submit" value="recommencer"/>
+        <input  style="background-color: teal"  class="center-block" type="submit" value="tentez une nouvelle fois votre chance"/>
     </form>
 {%else%}
         <form action="/" method="post">
@@ -29,7 +29,7 @@
             <input class="center-block" type="number" name="prixinput" id="prixinput"/>
             <input type="hidden" name="historique" value="{{HISTORIQUE}}"/>
             <input type="hidden" name="firstry" value="{{FIRSTRY}}"/>
-            <input class="center-block" type="submit" id="Valider"/>
+            <input style="background-color: teal" class="center-block" type="submit" id="Valider"/>
             
         </form> 
     {%if PRIXUSER != 0 %}
